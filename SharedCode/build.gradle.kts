@@ -22,12 +22,31 @@ kotlin {
 
     jvm("android")
 
+    val coroutines_version = "1.1.1"
+    val ktor_version = "1.1.4"
+
     sourceSets["commonMain"].dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$coroutines_version")
+        implementation("io.ktor:ktor-client:$ktor_version")
+        implementation("io.ktor:ktor-client-core:$ktor_version")
+        implementation("io.ktor:ktor-client-json:$ktor_version")
     }
 
     sourceSets["androidMain"].dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version")
+        implementation("io.ktor:ktor-client-android:$ktor_version")
+        implementation("io.ktor:ktor-client-core-jvm:$ktor_version")
+        implementation("io.ktor:ktor-client-json-jvm:$ktor_version")
+    }
+
+    sourceSets["iosMain"].dependencies {
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:$coroutines_version")
+        implementation("io.ktor:ktor-client-ios:$ktor_version")
+        implementation("io.ktor:ktor-client-core-native:$ktor_version")
+        implementation("io.ktor:ktor-client-json-native:$ktor_version")
     }
 }
 
