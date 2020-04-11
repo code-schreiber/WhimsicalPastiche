@@ -18,24 +18,24 @@ jobs:
           ref: 'master'
           path: 'flutter'
           fetch-depth: 0
-      - name: Add Flutter to the PATH for Unix.
+      - name: Add Flutter to the PATH for Unix
         run: echo "::add-path::/$GITHUB_WORKSPACE/flutter/bin"
-      - name: Run Flutter doctor.
+      - name: Run Flutter doctor
         run: flutter doctor -v
 
       # Clone the repository under `code`, to avoid conflicts with `flutter`.
-      - name: Clone the Gallery repository.
+      - name: Clone repository
         uses: actions/checkout@v2
         with:
           path: 'code'
 
       # Run the tests for the repository.
-      - name: Get packages for the Flutter project.
+      - name: Get packages for the Flutter project
         run: flutter pub get
         working-directory: code
-      - name: Analyze the project's Dart code.
+      - name: Analyze the project's Dart code
         run: flutter analyze
         working-directory: code
-      - name: Ensure the Dart code is formatted correctly.
+      - name: Ensure the Dart code is formatted correctly
         run: flutter format --set-exit-if-changed --dry-run .
         working-directory: code
