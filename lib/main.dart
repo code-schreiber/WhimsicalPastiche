@@ -10,7 +10,7 @@ class WhimsicalPasticheApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'App title',
+      title: 'Whimsical Pastiche',
       theme: ThemeData(
         primarySwatch: AppColors.primarySwatch,
       ),
