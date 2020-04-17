@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'AppColors.dart';
-import 'HomePage.dart';
+import 'app_colors.dart';
+import 'home_page.dart';
 
 void main() => runApp(WhimsicalPasticheApp());
 
