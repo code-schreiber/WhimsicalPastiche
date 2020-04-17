@@ -39,3 +39,6 @@ jobs:
       - name: Ensure the Dart code is formatted correctly
         run: flutter format --set-exit-if-changed --dry-run .
         working-directory: code
+      - name: Run unit tests
+        run: flutter test test/counter_test.dart
+        working-directory: code
